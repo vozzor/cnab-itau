@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+.env
+
+# Node
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Credentials — NUNCA commitar
+service-account*.json
+credentials*.json
+*-service-account*.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tests
+.pytest_cache/
+htmlcov/
+.coverage

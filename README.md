@@ -2,11 +2,11 @@
 
 Sistema full-stack para geração de remessas de pagamento em lote no padrão **CNAB 240 do Itaú (SISPAG)**. Implementa o ciclo completo: cadastro de fornecedores, lançamento de pagamentos, fluxo de aprovação, geração do arquivo e trilha de auditoria.
 
-> CNAB 240 é o padrão técnico do Banco Central do Brasil para arquivos de transferência bancária em lote. A especificação do Itaú SISPAG define posições fixas de bytes, segmentos (A, B, J) e regras de validação para cada tipo de pagamento — tornando a implementação um exercício preciso de parsing e geração de texto estruturado.
+> CNAB 240 é o padrão técnico do Banco Central do Brasil para arquivos de transferência bancária em lote. A especificação do Itaú SISPAG define posições fixas de bytes, segmentos (A, B) e regras de validação para cada tipo de pagamento — tornando a implementação um exercício preciso de parsing e geração de texto estruturado.
 
 ## Funcionalidades
 
-- Geração de arquivos CNAB 240 válidos (segmentos A e B para PIX/TED, segmento J para boletos)
+- Geração de arquivos CNAB 240 válidos para pagamento de fornecedores via Pix Transferência por chave (segmentos A e B)
 - Cadastro de fornecedores com validação de CPF/CNPJ e dados bancários
 - Fluxo de aprovação em duas etapas — lançamento precisa ser aprovado antes da remessa
 - Trilha de auditoria completa de todas as operações com timestamp e usuário

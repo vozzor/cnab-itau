@@ -1,8 +1,9 @@
 """
-Gerador CNAB 240 — Itaú SISPAG v086 (Fev/2024)
+Gerador CNAB 240 — Itaú SISPAG (versão do layout de arquivo 080)
 Pix Transferência por Chave (Tipo Pagamento 20, Forma 45, Câmara 009)
 
-Referência: "Layout de Arquivos CNAB - Versão 086 - SISPAG"
+Referência: "Layout de Arquivos CNAB - SISPAG"
+- Versão do layout do arquivo = 080 (campo 015-017 do Header de Arquivo)
 - Cada registro tem EXATAMENTE 240 caracteres
 - Campos alfanuméricos: alinhados à esquerda, completados com espaços
 - Campos numéricos: alinhados à direita, completados com zeros
@@ -244,7 +245,7 @@ def build_segmento_a(num_lote: int, seq: int, pagamento: Dict[str, Any]) -> str:
     r += " " * 20                                     # 024-043 agência/conta (opc p/ Pix chave)
     r += _alpha(nome_fav, 30)                         # 044-073
     r += _alpha(seu_numero, 20)                       # 074-093 seu número (Nota 46)
-    r += _num(data_fmt, 8)                            # 094-101 data pagamento
+    r += data_fmt                                     # 094-101 data pagamento (já com 8 dígitos)
     r += "REA"                                        # 102-104 moeda
     r += " " * 8                                      # 105-112 ISPB (brancos p/ Pix chave)
     r += "04"                                         # 113-114 identif. transferência = Chave
